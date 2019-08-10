@@ -1,0 +1,17 @@
+/*! \mainpage PolyMerger 
+ *
+ * \section intro_sec Introduction
+ *
+ * PolyMerger is the polygon union tool by using computer vision function like dilation and erodsion. If you want to merge too many polygons that are finely separated polygons, It would be very useful tool for you.
+ *
+ * \section Dependency 
+ *
+ * PolyMerger has dependencies as following. 
+ * \li OpenCV v0.0.0 
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */

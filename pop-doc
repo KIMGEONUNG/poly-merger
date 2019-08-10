@@ -1,0 +1,4 @@
+#!/bin/bash
+
+doxygen
+firefox ./doc/html/index.html
