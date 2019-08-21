@@ -35,7 +35,16 @@ namespace PolyMerger
 			 * The number of points in polygon
 			 */
 			int count();
+		
+			/**
+			 * Calculate polygon area
+			 */
+			double getArea();
 
+			/**
+			 * If the polygon has the pt, it return true, otherwise false.
+			 */
+			bool isContain(Point pt);
 	};
 }
 

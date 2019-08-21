@@ -1,8 +1,13 @@
+#include "Polygon.h"
+
+#ifndef POLYGONMERGER_H
+#define POLYGONMERGER_H
+
 namespace PolyMerger
 {
 
 	/** class that merge or union the polygons that is separated slightly */
-	class PolyMerger
+	class PolygonMerger
 	{
 	private:
 	    /**
@@ -11,8 +16,16 @@ namespace PolyMerger
 	     */
 	    int threshold;
 	public:
-	    PolyMerger(int threshold);
+
+	    PolygonMerger();
+	    PolygonMerger(int _threshold);
 	
+		/**
+		 * merge the Polygons 
+		 */
+		Polygon* merger(Polygon polys);
 	};
 
 }
+
+#endif

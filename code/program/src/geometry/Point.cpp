@@ -1,27 +1,35 @@
 #include "Point.h"
 #include <iostream>
 
-PolyMerger::Point::Point()
+namespace PolyMerger
 {
-}
+	Point::Point()
+	{
+	}
 
-PolyMerger::Point::Point(int _x, int _y)
-{
-	x = _x;
-	y = _y;
-}
+	Point::Point(int _x, int _y)
+	{
+		x = _x;
+		y = _y;
+	}
 
-void PolyMerger::Point::print()
-{
-	std::cout << "x : " << x << ", y : " << y << std::endl;
-}
+	void Point::print()
+	{
+		std::cout << "x : " << x << ", y : " << y << std::endl;
+	}
 
-int PolyMerger::Point::GetX()
-{
-	return x;
-}
+	int Point::getX()
+	{
+		return x;
+	}
 
-int PolyMerger::Point::GetY()
-{
-	return y;
+	int Point::getY()
+	{
+		return y;
+	}
+
+	bool Point::operator== (const Point& pt1)
+	{
+		return x == pt1.x && y == pt1.y;
+	}
 }

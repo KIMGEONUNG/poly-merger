@@ -6,10 +6,12 @@
 class PointTest : public CppUnit::TestFixture
 {
 	CPPUNIT_TEST_SUITE( PointTest );
-	CPPUNIT_TEST(testCtor);	
+	CPPUNIT_TEST(ctorTest);	
+	CPPUNIT_TEST(equalTest);	
 	CPPUNIT_TEST_SUITE_END();
 public:
-	void testCtor();
+	void ctorTest();
+	void equalTest();
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION( PointTest );

@@ -29,11 +29,16 @@ namespace PolyMerger
 			/**
 			 * Get X coordinates value
 			 */
-			int GetX();
+			int getX();
 			/**
 			 * Get Y coordinates value
 			 */
-			int GetY();
+			int getY();
+
+			/**
+			 * Equal operator overloading
+			 */
+			bool operator== (const Point& pt1);
 	};
 }
 #endif

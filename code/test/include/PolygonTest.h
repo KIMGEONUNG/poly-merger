@@ -6,10 +6,14 @@
 class PolygonTest : public CppUnit::TestFixture
 {
 	CPPUNIT_TEST_SUITE(PolygonTest);
-	CPPUNIT_TEST(testBasic1);
+	CPPUNIT_TEST(basicTest);
+	CPPUNIT_TEST(areaTest);
+	CPPUNIT_TEST(containTest);
 	CPPUNIT_TEST_SUITE_END();
 public:
-	void testBasic1();
+	void basicTest();
+	void areaTest();
+	void containTest();
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(PolygonTest);
