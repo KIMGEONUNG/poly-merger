@@ -1,5 +1,5 @@
-#ifndef POLYGONMERGER_H
-#define POLYGONMERGER_H
+#ifndef POLYGONMERGERTEST_H
+#define POLYGONMERGERTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
 

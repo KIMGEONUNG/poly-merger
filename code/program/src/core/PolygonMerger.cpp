@@ -1,7 +1,7 @@
+#include <opencv2/opencv.hpp>
 #include "Polygon.h"
 #include "Point.h"
 #include "PolygonMerger.h"
-
 
 namespace PolyMerger
 {
@@ -13,8 +13,12 @@ namespace PolyMerger
 		threshold = _threshold;
 	}
 
-	Polygon* PolygonMerger::merger(Polygon polys)
+	Polygon* PolygonMerger::merge(Polygon* polys)
 	{
+		using namespace cv;
+
+		Mat image = Mat::zeros( 400, 400, CV_8UC3 );
+
 		Point pts[0];
 		Polygon* poly = new Polygon(pts, 0);
 

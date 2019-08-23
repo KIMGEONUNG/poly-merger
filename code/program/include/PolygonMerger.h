@@ -23,7 +23,7 @@ namespace PolyMerger
 		/**
 		 * merge the Polygons 
 		 */
-		Polygon* merger(Polygon polys);
+		Polygon* merge(Polygon* polys);
 	};
 
 }
