@@ -4,6 +4,7 @@ set(SRCS
 	test_runner.cpp 
 	${PolyMergerTest_SOURCE_DIR}/src/geometry/PolygonTest.cpp
 	${PolyMergerTest_SOURCE_DIR}/src/geometry/PointTest.cpp
+	${PolyMergerTest_SOURCE_DIR}/src/geometry/BoundingRectangle.cpp
 	${PolyMergerTest_SOURCE_DIR}/src/core/PolygonMergerTest.cpp
 	)
 
