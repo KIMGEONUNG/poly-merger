@@ -6,7 +6,14 @@
 
 namespace PolyMerger
 {
-	BoundingRectangle::BoundingRectangle(){}
+	BoundingRectangle::BoundingRectangle()
+	{
+		this->minimumX = 0; 
+		this->minimumY = 0;
+
+		this->maximumX = 0;
+		this->maximumY = 0;
+	}
 
     BoundingRectangle::BoundingRectangle(Point _min, Point _max)
 	{

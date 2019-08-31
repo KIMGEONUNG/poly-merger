@@ -28,6 +28,12 @@ void BoundingRectangleTest::ctorTest()
 
 	actual = Point(4,6) == br.getMaxPoint();
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Bounding Rectangle Max Point Fail",expected, actual);
+
+	br = BoundingRectangle();
+	CPPUNIT_ASSERT_EQUAL(0, br.getMinPoint().getX());
+	CPPUNIT_ASSERT_EQUAL(0, br.getMinPoint().getY());
+	CPPUNIT_ASSERT_EQUAL( 0, br.getMaxPoint().getX());
+	CPPUNIT_ASSERT_EQUAL( 0, br.getMaxPoint().getY());
 }
 
 void BoundingRectangleTest::addPointTest()

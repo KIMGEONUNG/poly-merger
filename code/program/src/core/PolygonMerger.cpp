@@ -1,4 +1,5 @@
 #include <opencv2/opencv.hpp>
+#include "BoundingRectangle.h"
 #include "Polygon.h"
 #include "Point.h"
 #include "PolygonMerger.h"
