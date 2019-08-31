@@ -32,7 +32,7 @@ void PolygonMergerTest::mergeTest()
 	polys[0] = rec1;
 	polys[1] = rec2;
 
-	Polygon* rs = merger.merge(polys);
+	Polygon* rs = merger.merge(polys, 2);
 	double area = rs[0].getArea();
 
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Merge test fail",36.0 ,area);

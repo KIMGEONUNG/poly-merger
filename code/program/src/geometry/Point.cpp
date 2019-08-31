@@ -32,4 +32,14 @@ namespace PolyMerger
 	{
 		return x == pt1.x && y == pt1.y;
 	}
+
+	Point Point::operator+ (const Point& pt1)
+	{
+		return Point(x + pt1.x, y + pt1.y);
+	}
+
+	Point Point::operator- (const Point& pt1)
+	{
+		return Point(x - pt1.x, y - pt1.y);
+	}
 }

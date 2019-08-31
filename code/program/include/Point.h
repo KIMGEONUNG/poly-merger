@@ -39,6 +39,8 @@ namespace PolyMerger
 			 * Equal operator overloading
 			 */
 			bool operator== (const Point& pt1);
+			Point operator+ (const Point& pt1);
+			Point operator- (const Point& pt1);
 	};
 }
 #endif

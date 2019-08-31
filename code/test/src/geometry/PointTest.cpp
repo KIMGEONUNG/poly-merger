@@ -28,3 +28,19 @@ void PointTest::equalTest()
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Point equal test fail", false, cmp1);
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Point equal test fail", true, cmp2);
 }	
+
+void PointTest::arithmeticTest()
+{
+	using namespace PolyMerger;
+	Point pt1 = Point(1,2);
+	Point pt2 = Point(4,6);
+
+	Point added = pt1 + pt2;
+	Point sub = pt2 - pt1;
+
+	bool cmp1 = added == Point(5,8);
+	bool cmp2 = sub == Point(3,4);
+
+	CPPUNIT_ASSERT_EQUAL_MESSAGE("Point arithmeticTest test fail", true, cmp1);
+	CPPUNIT_ASSERT_EQUAL_MESSAGE("Point arithmeticTest test fail", true, cmp2);
+}

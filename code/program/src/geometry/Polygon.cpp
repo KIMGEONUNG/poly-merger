@@ -49,4 +49,8 @@ namespace PolyMerger
 
 		return area;
 	}
+	Point* Polygon::getPoints()
+	{
+		return this->points;
+	}
 }

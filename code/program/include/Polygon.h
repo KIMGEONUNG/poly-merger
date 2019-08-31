@@ -45,6 +45,8 @@ namespace PolyMerger
 			 * If the polygon has the pt, it return true, otherwise false.
 			 */
 			bool isContain(Point pt);
+
+			Point* getPoints();
 	};
 }
 

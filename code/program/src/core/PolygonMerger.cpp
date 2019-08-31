@@ -14,11 +14,25 @@ namespace PolyMerger
 		threshold = _threshold;
 	}
 
-	Polygon* PolygonMerger::merge(Polygon* polys)
+	Polygon* PolygonMerger::merge(Polygon* polys, int count)
 	{
 		using namespace cv;
 
-		Mat image = Mat::zeros( 400, 400, CV_8UC3 );
+		BoundingRectangle br = BoundingRectangle();
+		int width, height;
+
+		for (int i= 0; i < count; i++) {
+			Polygon poly = polys[i];	
+			int ptCount = poly.count();
+			Point* pts = poly.getPoints();
+
+			br.addPoints(pts, ptCount);	
+		}
+
+		width = br.getWidth();
+		height = br.getHeight();
+
+		Mat image = Mat::zeros( width, height, CV_8UC3 );
 
 		Point pts[0];
 		Polygon* poly = new Polygon(pts, 0);
