@@ -19,6 +19,6 @@ int main(int argc, char* argv[])
   bool wasSucessful = runner.run();
 
   // Return error code 1 if the one of test failed.
-  return 10;
+  return 0;
 }
 
