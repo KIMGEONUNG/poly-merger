@@ -11,13 +11,22 @@ namespace PolyMerger
 	{
 	private:
 	    /**
-	     * Minimum point of bounding rectangle 
+	     * Minimum x coordinates
 	     */
-	    Point min;
+		int minimumX;
 	    /**
-	     * Maximum point of bounding rectangle 
+	     * Minimum y coordinates
 	     */
-	    Point max;
+		int minimumY;
+
+	    /**
+	     * Maximum x coordinates
+	     */
+		int maximumX;
+	    /**
+	     * Maximum y coordinates
+	     */
+		int maximumY;
 	public:
 
 	    BoundingRectangle();
@@ -34,6 +43,12 @@ namespace PolyMerger
 		 * return max.y - min.y  
 		 */
 		int getHeight();
+
+		/**
+		 * Add point and update bounding rectangle
+		 */
+		void addPoint(Point pt);
+		void addPoints(Point* pts, int len);
 	};
 
 }

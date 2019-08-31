@@ -7,11 +7,16 @@
 namespace PolyMerger
 {
 	BoundingRectangle::BoundingRectangle(){}
+
     BoundingRectangle::BoundingRectangle(Point _min, Point _max)
 	{
-		this->max=_max;
-		this->min=_min;
+		this->minimumX = _min.getX();
+		this->minimumY = _min.getY();
+
+		this->maximumX = _max.getX();
+		this->maximumY = _max.getY();
 	}
+
     BoundingRectangle::BoundingRectangle(Point* pts, int length)
 	{
 		Point minPt, maxPt;
@@ -28,36 +33,64 @@ namespace PolyMerger
 		std::sort(xVec.begin(), xVec.begin()+length);
 		std::sort(yVec.begin(), yVec.begin()+length);
 
+		this->minimumX = xVec[0]; 
+		this->minimumY = yVec[0]; 
 
-		minPt = Point(xVec[0],yVec[0]);
-		maxPt = Point(xVec[length-1],yVec[length-1]);
-
-		this->min = minPt;
-		this->max = maxPt;
-		
+		this->maximumX = xVec[length-1]; 
+		this->maximumY = yVec[length-1]; 
 	}
 	
 	Point BoundingRectangle::getMinPoint()
 	{
-		return this->min;
+		Point minPt = Point(minimumX, minimumY);
+		return minPt;
 	}
 	
 	Point BoundingRectangle::getMaxPoint()
 	{
-		return this->max;
+		Point maxPt = Point(maximumX, maximumY);
+		return maxPt;
 	}
 
 	int BoundingRectangle::getWidth()
 	{
-		int maxX = max.getX();
-		int minX = min.getX();
-		return maxX - minX;  
+		return maximumX - minimumX; 
 	}
 
 	int BoundingRectangle::getHeight()
 	{
-		int maxY = max.getY();
-		int minY = min.getY();
-		return maxY - minY;  
+		return maximumY - minimumY; 
+	}
+
+	void BoundingRectangle::addPoint(Point pt)
+	{
+		int newX = pt.getX();	
+		int newY = pt.getY();	
+
+		if(newX < this->minimumX)
+		{
+			this->minimumX = newX;
+		}
+		else if(this->maximumX < newX)
+		{
+			this->maximumX = newX;
+		}
+
+		if(newY < this->minimumY)
+		{
+			this->minimumY = newY;
+		}
+		else if(this->maximumY < newY)
+		{
+			this->maximumY = newY;
+		}
+	}
+
+	void BoundingRectangle::addPoints(Point* pts, int len)
+	{
+		for (int i = 0; i < len; i++) {
+			Point pt = pts[i];	
+			this->addPoint(pt);
+		}
 	}
 }
