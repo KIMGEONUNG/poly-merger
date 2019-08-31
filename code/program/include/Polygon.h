@@ -46,7 +46,20 @@ namespace PolyMerger
 			 */
 			bool isContain(Point pt);
 
+			/**
+			 * the point element at i index
+			 */
+			Point pointAt(int i);
+
+			/**
+			 * Get point of polygon
+			 */
 			Point* getPoints();
+
+			/**
+			 * Move this polygon
+			 */
+			Polygon translate(int x, int y);
 	};
 }
 

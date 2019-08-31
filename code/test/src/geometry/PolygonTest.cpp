@@ -80,3 +80,26 @@ void PolygonTest::containTest()
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Contain test fail", true, contain1);
 	CPPUNIT_ASSERT_EQUAL_MESSAGE("Contain test fail", false, contain2);
 }
+
+void PolygonTest::translateTest()
+{
+	using namespace std;
+	using namespace PolyMerger;
+	cout << "PolygonTest translate Test Start" << endl;
+
+	int cnt = 3;
+	Point pts [3];
+	pts[0] = Point(0,0);
+	pts[1] = Point(10,0);
+	pts[2] = Point(0,10);
+	Polygon original = Polygon(pts, cnt);
+    Polygon poly = original.translate(-3,7);
+
+	bool cmp1 = poly.pointAt(0) == Point(-3,7);
+	bool cmp2 = poly.pointAt(1) == Point(7,7);
+	bool cmp3 = poly.pointAt(2) == Point(-3,17);
+
+	CPPUNIT_ASSERT_EQUAL_MESSAGE("translate1 test fail", true, cmp1);
+	CPPUNIT_ASSERT_EQUAL_MESSAGE("translate2 test fail", true, cmp2);
+	CPPUNIT_ASSERT_EQUAL_MESSAGE("translate3 test fail", true, cmp3);
+}

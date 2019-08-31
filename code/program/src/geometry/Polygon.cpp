@@ -18,6 +18,10 @@ namespace PolyMerger
 		return pointCount;
 	}
 
+	Point Polygon::pointAt(int i)
+	{
+		return points[i];
+	}
 	bool Polygon::isContain(Point pt)
 	{
 		for(int i = 0; i < pointCount; i++)
@@ -49,8 +53,23 @@ namespace PolyMerger
 
 		return area;
 	}
+
 	Point* Polygon::getPoints()
 	{
 		return this->points;
+	}
+
+	Polygon Polygon::translate(int x,int y)
+	{
+		Point move = Point(x,y);
+		int cnt = this->pointCount;
+		Point pts[cnt];
+		for (int i = 0; i < cnt; i++) {
+			Point pt = points[i] + move; 	
+			pts[i] = pt;
+		}
+		Polygon poly = Polygon(pts, cnt);
+
+		return poly;
 	}
 }
